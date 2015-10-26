@@ -1,17 +1,16 @@
 language: node_js
-
 script:
-    - rm -rf .git
-    - rm -r .gitignore
-    - rm -f .travis.yml
-    - git init
-    - git config user.name "Travis CI"
-    - git config user.email "miya+github.com@wpist.me"
-    - git add .
-    - git commit -q -m "Deploy to GitHub Pages"
-    - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
-
+- rm -rf .git
+- rm -r .gitignore
+- rm -f .travis.yml
+- git init
+- git config user.name "Travis CI"
+- git config user.email "miya+github.com@wpist.me"
+- git add .
+- git commit -q -m "Deploy to GitHub Pages"
+- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null
+  2>&1
 env:
   global:
   - GH_REF: github.com/miya0001/travis-deploy.git
-
+  - secure: Le4I+5OF/aZIXhBP2hYy6ci4+/7WueGEMwAlplp4wjVeY0VY+RXEGaecHBg7QLsOEL6Ffyd4ENKNohRydSdbze4K/HrWh/ixm2xC0bRoN2TK/BDzGCWBI4Z6G4Aoc4DHARNjVSniA6evwDn8bVKVyz+qamHw7mu1DoVoo7pmTEB/eHOdqdCD9XXMdKcMB2N8/58ERlWYBRM+0HUVmnt9h5fOimxthoHB6rDgWlmIz7JYd1CzU4iaGOzELuIqLNHjfw74WxnSJ3Okb+J9EBwLivqEsqKhaDuT4TNbmGFabVUSfqcIzMGDiZtGw5M9Lbxk+wItQ60dwEfWemkQQhhH5amxsrHqxpv8p58/5YxTlm94s/WRT65gxOL82vlmcxmI2YRf2lFUx1Rnbtr7UeQLea6QOD+DvaP1czACD+QwYkx++yvfICJxxbp+DDTH3tZ/c5QKJmn8+Wm4E/obrFSHi84BvOWhyGfhKoHU+7HJiAPEELkeE/aJ9fgWvZViOL24j8Go6CBOrvt4JvH2aqzZnHvW8FNIRc6j1ScPZXFemxr38ydENoASjnuw8VlTdbKwgjuggprPF3+xqLPlPDHkQr04sNmIwQiE+xluCxdjQd9RlCTpgFJyGJoc/Pew3qJdTvA3bBgWpdwRcYNw2WNuBZuo+2MzQAnvC/kkVRhJJCY=
