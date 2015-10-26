@@ -8,8 +8,7 @@ script:
   - git config user.email "miya+github.com@wpist.me"
   - git add .
   - git commit -q -m "Deploy to GitHub Pages"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null
-  2>&1
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 env:
   global:
   - GH_REF: github.com/miya0001/travis-deploy.git
